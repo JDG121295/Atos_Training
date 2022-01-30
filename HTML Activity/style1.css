@@ -1,0 +1,6 @@
+body {
+	background-image: url('7cn7clad19d11.jpg');
+	background-repeat: repeat-x;
+	}
+h1,h2{color:white; background-color:red;}
+div+p{color:red;}
