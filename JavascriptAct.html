@@ -1,0 +1,68 @@
+<html>
+    <head>
+
+        <style>
+
+           table, th, td {
+            border:3px solid red; background-color:lightblue; font-style:italic; font-weight: bold;
+            }
+            .center {
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        </style>
+        <title>
+            Product Details Entry Screen
+        </title>  
+    </head>
+
+    <body>
+
+        <script type="text/javascript" src="prod.js">
+        </script>
+        <form>
+	<br><br><br><br><br><br><br><br><br><br><br>
+        <table class="center">
+            <td colspan="3">Product Details-Entry Screen</td><tr>
+            <td colspan="3">
+                <select name="Eitem" id="Eitem" style="width:350px;" onchange = "dispval()">
+                    <option value="">- - Select Item - -</option>
+                    <option value="28000">Desktop</option>
+                    <option value="30000">Laptop</option>
+                    <option value="20000">Mobile Phone</option>
+                    <option value="3200">Speaker</option>
+                    <option value="2000">Microphone</option>
+                    </select>
+
+            </td>
+            <tr>
+            <td colspan="3"><input type="number" id="price" name="price" value="0" readonly></td><tr>
+                <td colspan="3">Discounts</td><tr>
+            <td>
+                Black Friday: <input type="radio" name="disc" value="0.3" onclick="check(this.value)" >
+            </td>
+            <td>
+                App100: <input type="radio" name="disc" value="0.1" onclick="check(this.value)">
+                </td>
+            <td>
+                App200: <input type="radio" name="disc" value="0.2" onclick="check(this.value)">
+
+            </td><tr>
+            <td colspan="3">Total Amount</td><tr></tr>
+                <td  colspan="3">
+                    <input type="number" id="tprice" name="tprice" value="0" readonly>
+                    </td><tr>
+                        <td colspan="3">Place Order</td><tr></tr>
+                    <td  colspan="3">
+                        <input type="number" id="inprice" name="inprice" value="0" required>
+                        </td><tr>
+                            <td>
+                                <input type="button" name="confirm" value="Confirm" onclick="myFunction()">
+
+                            </td>
+        </table>
+        </form>
+        
+    </body>
+</html>
