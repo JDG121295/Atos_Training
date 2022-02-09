@@ -1,0 +1,193 @@
+Name: John Emmanuel P. De Guzman
+E-mail: john-emmanuel.deguzman@atos.net
+Atos ID: A853923
+
+REACT ASSIGNMENT #1
+
+1. Install NodeJS, Visual Studio Code (COMPLETED)
+
+2. Create a "Welcome" component to greet the user using a Javascript function,
+with a property called as name. Appy some css styling. Use the component in
+App component.
+
+3. Create a component to add two numbers.
+
+4. Modify the card component to add a props age and perform the validation,
+to check it's a number.
+
+5. What is Virtual DOM in ReactJS
+	- a programming concept where an ideal, virtual, representation of a
+	User Interface is kept in memory and synced with the actual DOM by a
+	library such as ReactDOM.
+
+
+- - // C O D E 0 1 // - -
+
+
+- - App.js - -
+
+import logo from './logo.svg';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+import Greeting from './Greeting.js';
+import Insert from './Insert.js';
+import Card from './Card.js';
+
+function App ()
+{
+    const style = 
+    {
+
+    }
+    return 
+    (
+      <div className="App">
+        <Greeting style={style} name="Jed"/>
+      </div>
+    );
+}
+export default App;
+
+
+- - Greeting.js - -
+
+export default function Greeting(props)
+
+{
+    return 
+    (
+        <div style={props.style}>
+            <h1>Welcome, {props.name}</h1>
+        </div>
+    )
+}
+
+
+
+- - // C O D E 0 2 // - -
+
+
+- - Insert.js - -
+
+import React from 'react';
+
+export default class Insert extends React.Component
+{
+    constructor (props)
+    {
+        super(props);
+        this.state = {frist: 0, second: 0, sum:0};
+    }
+
+    changeFirst=(event) =>
+    {
+        this.setState({first: Number(event.target.value)});
+    }
+    changeSecond=(event) =>
+    {
+        this.setState({second: Number(event.target.value)});
+    }
+    getSum=(event) =>
+    {
+        this.setState({sum: Number(this.state.frist) + Number(this.state.second)});
+    }
+
+    render ()
+    {
+        const style =
+        {
+            width: "15%",
+            height: "30px",
+            border: "0px"
+        }
+        const button =
+        {
+            width: "15%",
+            height: "30px",
+            borderRadius: "10px",
+            border: "0px",
+            color: "Gray",
+            backgroundColor: "Maroon"
+        }
+
+        return
+        (
+            <div style={this.props.style}>
+                <h3>Sum of the Two Numbers</h3>
+                <input type="text" id="first" style={style} onChange={this.changeFirst}></input>
+                &nbsp;+&nbsp;
+                <input type="text" id="second" style={style} onChange={this.changeSecond}></input>
+                <br></br><br></br><br></br>
+                <input type="text" id="sum" value={this.state.sum} style={style}></input>
+                &nbsp;  &nbsp;&nbsp;&nbsp;
+                <button type='button' onclick={this.getSum} style={button}> ADD </button>
+                <br></br><br></br><br></br>
+            </div>
+        );
+    }
+}
+
+
+- - Card.js - -
+
+import React from 'react';
+
+export default class Card extends React.Component
+{
+    constructor(props)
+    {
+        super(props);
+        this.state=
+        {
+            value:"",
+            result:"No Input"
+        }
+    }
+
+    setInput=(event) =>
+    {
+        this.setState({value: event.target.value})
+    }
+    checkInput=(event) =>
+    {
+        if(isNaN(this.state.value))
+        {
+            this.setState({result: "This is not a numerical value..."})
+        }
+        else
+        {
+            this.setState({result: "This is a numerical value..."})
+        }
+
+        this.render()
+        {
+        const style =
+            {
+            width: "15%",
+            height: "30px",
+            border: "0px"
+            }
+        const button =
+            {
+            width: "15%",
+            height: "30px",
+            borderRadius: "10px",
+            border: "0px",
+            color: "Gray",
+            backgroundColor: "Maroon"
+            }
+        return
+        (
+            <div style={this.props.style}>
+                <h3>Age</h3>
+                <input type="text" style={style} onChange={this.setInput}></input>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button style={button} onClick={this.checkInput}>Check</button>
+                <p>{this.state.result}</p>
+                <br></br><br></br>
+            </div>
+        );
+        }
+    }
+}
