@@ -1,0 +1,69 @@
+Name: John Emmanuel P. De Guzman
+E-mail: john-emmanuel.deguzman@atos.net
+Atos ID: A853923
+
+JAVA ASSIGNMENT #1
+
+1.Finding the Largest number in an Array of 5.
+
+
+package Activity1;
+
+public class FindLargestValue
+{
+public static void main(String[] args) 
+{
+		int [] array = { 10, 25, 5, 100, 60};
+		int maxNumber = array[0];
+		
+		for(int index=0; index < array.length; index++)
+		{
+			if(array[index] > maxNumber)
+			{
+				maxNumber = array[index];
+			}
+		}
+		System.out.println("The Largest Number is: " + maxNumber);
+}
+}
+
+=========================================================================================================================
+2. Finding the Cube and Square of numbers.
+
+
+package Activity1;
+
+public class CubeAndSquare 
+{
+public static void main(String[] args) 
+{
+		System.out.println("Numbers\t\tSquare\t\tCube");
+		for(int index=0;index<=5;index++)
+			System.out.println(index + "\t\t" + (int)Math.pow(index,2) + "\t\t" + (int)Math.pow(index,3));
+
+}
+
+}
+
+=========================================================================================================================
+3. Swapping 2 numbers places.
+
+
+package Activity1;
+
+public class SwappingNumbers 
+{
+public static void main(String[] args)
+{
+	int a=10, b=25;
+	int t;
+	t=a;
+	a=b;
+	b=t;
+	
+	System.out.println("a: " + a);
+	System.out.println("b: " + b);
+
+}
+
+}
